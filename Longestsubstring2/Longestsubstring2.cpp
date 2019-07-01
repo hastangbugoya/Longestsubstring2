@@ -24,7 +24,7 @@ int main()
 	{
 		for (i = 0; notfound && i < strlen(longer) - chunksize + 1; i++)
 		{
-			for (j = 0; notfound && j < strlen(shorter) - chunksize + 1; j++)
+			for (j = 0; notfound && j <= strlen(shorter) - chunksize; j++)
 			{
 				//ctr++;
 				for (k = 0; shorter[j + k] == longer[i + k] && k < chunksize; k++);
