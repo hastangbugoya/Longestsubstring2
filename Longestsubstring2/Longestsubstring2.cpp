@@ -1,5 +1,10 @@
 // Longestsubstring2.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+/*
+	Compares substrings chunks at a time starting with the biggest chunk -> the shorter string and slowly decreases the chunk
+	size until 2.  If 2 chunks are found equal one from the longer string and one from the shorter string the code stops
+	and the longest equal "chunk" of string is found. - Dunno if faster but definitely cuter. 
+*/
 
 #include "pch.h"
 #include <iostream>
