@@ -13,8 +13,10 @@
 int main()
 {
 	printf("Hello World!");
-	char string1[] = "xbanana"; //"applesedndudbananases";
-	char string2[] = "bananawefewrwerseswapplesedsthdubanantasesaasd";
+	//char string1[] = "bananax"; //"applesedndudbananases";
+	//char string2[] = "bananawefewrwerseswapplesedsthdubanantasesaasd";
+	char string1[] = "asasasabasasasas"; 
+	char string2[] = "vfvfvbafvfvf";
 	char *longer = string2, *shorter = string1;
 	int chunksize, i, j, k, l;
 	int notfound = 1;
@@ -48,7 +50,7 @@ int main()
 		}
 		chunksize--;
 	}
-	if (notfound) printf("\nNo subtring of lenght 2 or greater found!");
+	if (notfound) printf("\nNo subtring of length 2 or greater found!");
 	//printf("\n%d", ctr);
 }
 
