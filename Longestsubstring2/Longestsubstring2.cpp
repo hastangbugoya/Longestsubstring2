@@ -1,7 +1,7 @@
 // Longestsubstring2.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 /*
-	Compares substrings chunks at a time starting with the biggest chunk -> the shorter string and slowly decreases the chunk
+	NOT FULLY TESTED. Compares substrings chunks at a time starting with the biggest chunk -> the shorter string and slowly decreases the chunk
 	size until 2.  If 2 chunks are found equal one from the longer string and one from the shorter string the code stops
 	and the longest equal "chunk" of string is found. - faster? cute is what we aim for.  If two substrings of equal length the first 
 	one from the start of the string is "found". If want last substring - start from the tail end of the longer string.
@@ -15,26 +15,27 @@ int main()
 	printf("Hello World!");
 	//char string1[] = "bananax"; //"applesedndudbananases";
 	//char string2[] = "bananawefewrwerseswapplesedsthdubanantasesaasd";
-	char string1[] = "asasasasasasasbasadog"; 
+	char string1[] = "basasasasasasasasadog"; 
 	char string2[] = "vfvfvfvfvfbasfvdog";
 	char *longer = string2, *shorter = string1;
 	int chunksize, i, j, k, l;
+	int longlength, shortlength;
 	int notfound = 1;
-	//int ctr = 0;
 	if (strlen(string1) > strlen(string2))
 	{
 		longer = string1;
 		shorter = string2;
 	}
+	longlength = strlen(longer);
+	shortlength = strlen(shorter);
 	chunksize = strlen(shorter);
 	system("cls");
 	while (notfound && chunksize >= 2)
 	{
-		for (i = 0; notfound && i <= strlen(longer) - chunksize; i++)
+		for (i = 0; notfound && i <= longlength - chunksize; i++)
 		{
-			for (j = 0; notfound && j <= strlen(shorter) - chunksize; j++)
+			for (j = 0; notfound && j <= shortlength - chunksize; j++)
 			{
-				//ctr++;
 				for (k = 0; shorter[j + k] == longer[i + k] && k < chunksize; k++); //increment k while the substrings are still equal
 				if (k == chunksize) //if k went all the way - the two chunks are equal
 				{
@@ -51,7 +52,6 @@ int main()
 		chunksize--;
 	}
 	if (notfound) printf("\nNo subtring of length 2 or greater found!");
-	//printf("\n%d", ctr);
 }
 
 
