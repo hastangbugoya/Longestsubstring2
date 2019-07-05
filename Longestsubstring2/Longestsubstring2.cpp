@@ -3,8 +3,8 @@
 /*
 	Compares substrings chunks at a time starting with the biggest chunk -> the shorter string and slowly decreases the chunk
 	size until 2.  If 2 chunks are found equal one from the longer string and one from the shorter string the code stops
-	and the longest equal "chunk" of string is found. - Dunno if faster but definitely cuter.  If two substrings of equal length the first 
-	one from the start of the string is "found".
+	and the longest equal "chunk" of string is found. - faster? cute is what we aim for.  If two substrings of equal length the first 
+	one from the start of the string is "found". If want last substring - start from the tail end of the longer string.
 */
 
 #include "pch.h"
@@ -15,8 +15,8 @@ int main()
 	printf("Hello World!");
 	//char string1[] = "bananax"; //"applesedndudbananases";
 	//char string2[] = "bananawefewrwerseswapplesedsthdubanantasesaasd";
-	char string1[] = "asasasabasasasas"; 
-	char string2[] = "vfvfvbafvfvf";
+	char string1[] = "asasasasasasasbasadog"; 
+	char string2[] = "vfvfvfvfvfbasfvdog";
 	char *longer = string2, *shorter = string1;
 	int chunksize, i, j, k, l;
 	int notfound = 1;
@@ -30,7 +30,7 @@ int main()
 	system("cls");
 	while (notfound && chunksize >= 2)
 	{
-		for (i = 0; notfound && i < strlen(longer) - chunksize + 1; i++)
+		for (i = 0; notfound && i <= strlen(longer) - chunksize; i++)
 		{
 			for (j = 0; notfound && j <= strlen(shorter) - chunksize; j++)
 			{
