@@ -9,14 +9,15 @@
 
 #include "pch.h"
 #include <iostream>
+#define minsubstringlength 2
 
 int main()
 {
 	printf("Hello World!");
 	//char string1[] = "bananax"; //"applesedndudbananases";
 	//char string2[] = "bananawefewrwerseswapplesedsthdubanantasesaasd";
-	char string1[] = "basasasasasasasasadog"; 
-	char string2[] = "vfvfvfvfvfbasfvdog";
+	char string1[] = "basasasasasasasasadsoag"; 
+	char string2[] = "vfvfvfvfvfbyavsfvdvofg";
 	char *longer = string2, *shorter = string1;
 	int chunksize, i, j, k, l;
 	int longlength, shortlength;
@@ -30,7 +31,7 @@ int main()
 	shortlength = strlen(shorter);
 	chunksize = strlen(shorter);
 	system("cls");
-	while (notfound && chunksize >= 2)
+	while (notfound && chunksize >= minsubstringlength)
 	{
 		for (i = 0; notfound && i <= longlength - chunksize; i++)
 		{
@@ -51,7 +52,7 @@ int main()
 		}
 		chunksize--;
 	}
-	if (notfound) printf("\nNo subtring of length 2 or greater found!");
+	if (notfound) printf("\nNo subtring of length %d or greater found!",minsubstringlength);
 }
 
 
